@@ -44,7 +44,7 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('My first Flutter App'),
         ),
-        body: Column(
+        body: _questionIndex < questions.length ? Column(
           children: [
             Question(
               questions[_questionIndex]['questionText'],                  //so here there is the index being used as well as the key !!!
@@ -57,7 +57,7 @@ class _MyAppState extends State<MyApp> {
             // RaisedButton(child: Text('Answer 3'), onPressed: (){print('Answer 3 chosen');},),
             // Answer(_answerQuestion),
           ],
-        ),
+        ) : Center(child: Text('You did it!'),),
       ),
     );
   }
