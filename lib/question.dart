@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Question extends StatelessWidget {
 
-  String questionText;
+  final String questionText;                       //made immutable with 'final'  !!!   Dart has to be immutable
 
   Question(this.questionText);
   @override
