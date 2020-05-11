@@ -7,4 +7,5 @@ flutter run
 
 remember why you chose flutter, cross-platform !!!, use this optimally
 
-R          ==>> reload in emulator!
+R          ==>> restart in emulator!
+r          ==>> hot reload in emulator!
