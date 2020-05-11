@@ -8,7 +8,11 @@ class Quiz extends StatelessWidget {
   final int questionIndex;
   final Function answerQuestion;
 
-  Quiz({this.questions, this.answerQuestion, this.questionIndex})          // the constructor here does not have to be this explicit, but, readability !!
+  Quiz({
+    @required this.questions, 
+    @required this.answerQuestion, 
+    @required this.questionIndex,
+  });         
 
   @override
   Widget build(BuildContext context) {
