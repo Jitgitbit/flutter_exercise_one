@@ -7,6 +7,14 @@ class Question extends StatelessWidget {
   Question(this.questionText);
   @override
   Widget build(BuildContext context) {
-    return Text(questionText);
+    return Container(                                  //Container, double.infinity, and textAlign.center are all needed for centering here!    
+      width: double.infinity,                         //Container, double.infinity, and textAlign.center are all needed for centering here!
+      margin: EdgeInsets.all(10),
+      child: Text(
+        questionText,
+        style: TextStyle(fontSize: 28),
+        textAlign: TextAlign.center,                 //Container, double.infinity, and textAlign.center are all needed for centering here!
+      ),
+    );
   }
 }
