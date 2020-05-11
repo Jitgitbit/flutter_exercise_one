@@ -31,28 +31,34 @@ class _MyAppState extends State<MyApp> {
       },                                                                      // this is actually a MAP !!!
       {
         'questionText': 'What\'s your favorite predator animal?',
-        'answers': ['Wolf', 'Tiger', 'Panther', 'Cheetah', 'Dolphin']
+        'answers': ['Wolf', 'Tiger', 'Panther', 'Cheetah', 'Dolphin', 'Bear', 'Eagle', 'Fox', 'Maine Coon', 'Scorpion']
       },
       {
         'questionText': 'What\'s your favorite prey animal?',
-        'answers': ['Donkey', 'Horse', 'Squirrel', 'Buffalo', 'Rabbit']
+        'answers': ['Donkey', 'Horse', 'Squirrel', 'Buffalo', 'Hare']
       }
     ];
 
-    return MaterialApp(home: Scaffold(
-      appBar: AppBar(
-        title: Text('My first App'),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('My first App'),
+        ),
+        body: Column(
+          children: [
+            Question(
+              questions[_questionIndex]['questionText'],                  //so here there is the index being used as well as the key !!!
+            ), 
+            ...(questions[_questionIndex]['answers'] as List<String>).map((answer){                  //yes, using the spread operator !
+              return Answer(_answerQuestion, answer);
+            }).toList()
+            // RaisedButton(child: Text('Answer 1'), onPressed: _answerQuestion,),
+            // RaisedButton(child: Text('Answer 2'), onPressed: ()=>print('Answer 2 chosen'),),
+            // RaisedButton(child: Text('Answer 3'), onPressed: (){print('Answer 3 chosen');},),
+            // Answer(_answerQuestion),
+          ],
+        ),
       ),
-      body: Column(children: [
-        Question(questions[_questionIndex]['questionText']),                                    //so here there is the index being used as well as the key !!!
-        // RaisedButton(child: Text('Answer 1'), onPressed: _answerQuestion,),
-        // RaisedButton(child: Text('Answer 2'), onPressed: ()=>print('Answer 2 chosen'),),
-        // RaisedButton(child: Text('Answer 3'), onPressed: (){print('Answer 3 chosen');},),
-        Answer(_answerQuestion),
-        Answer(_answerQuestion),
-        Answer(_answerQuestion),
-      ],),
-    ),);
-    
+    );
   }
 }
