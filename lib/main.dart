@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+import 'package:flutter_exercise_one/question.dart';
+
+void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
 
@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
         title: Text('My first App'),
       ),
       body: Column(children: [
-        Text(questions[_questionIndex]),
+        Question(questions[_questionIndex]),
         RaisedButton(child: Text('Answer 1'), onPressed: _answerQuestion,),
         RaisedButton(child: Text('Answer 2'), onPressed: ()=>print('Answer 2 chosen'),),
         RaisedButton(child: Text('Answer 3'), onPressed: (){print('Answer 3 chosen');},),
