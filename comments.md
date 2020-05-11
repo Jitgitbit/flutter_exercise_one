@@ -4,3 +4,5 @@ android studio, remember it's important to create a virtual device WITH the play
 Pixel 2 with Android Pie API 28 created
 
 flutter run
+
+remember why you chose flutter, cross platform !!!, use this optimally
