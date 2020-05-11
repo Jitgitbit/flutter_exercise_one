@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
 
-    var questions = [
+    const questions = [                                                      // const because it is compile-time constant, not runtime constant(as for final) !!!
       {
         'questionText': 'What\'s your favorite color?',
         'answers': ['Black', 'Red', 'Grey', 'Blue', 'Green']
@@ -42,7 +42,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('My first App'),
+          title: Text('My first Flutter App'),
         ),
         body: Column(
           children: [
