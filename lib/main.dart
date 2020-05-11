@@ -24,8 +24,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
 
-    const questions = [                                                      // const because it is compile-time constant, not runtime constant(as for final) !!!
-      {                                                                     // props or vars marked as final can't change at runtime !!!
+    final questions = const [     // Now the values are constant, var is final    // const because it is compile-time constant, not runtime constant(as for final) !!!
+      {                                                                          // props or vars marked as final can't change at runtime !!!
         'questionText': 'What\'s your favorite color?',
         'answers': ['Black', 'Red', 'Grey', 'Blue', 'Green']
       },                                                                      // this is actually a MAP !!!
