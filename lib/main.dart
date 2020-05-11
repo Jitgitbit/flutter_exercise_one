@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_exercise_one/answer.dart';
-import 'package:flutter_exercise_one/question.dart';
+import 'package:flutter_exercise_one/quiz.dart';
 
 void main() => runApp(MyApp());
 
@@ -24,7 +23,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
 
-    final questions = const [     // Now the values are constant, var is final    // const because it is compile-time constant, not runtime constant(as for final) !!!
+    final _questions = const [     // Now the values are constant, var is final    // const because it is compile-time constant, not runtime constant(as for final) !!!
       {                                                                          // props or vars marked as final can't change at runtime !!!
         'questionText': 'What\'s your favorite color?',
         'answers': ['Black', 'Red', 'Grey', 'Blue', 'Green']
@@ -44,20 +43,9 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('My first Flutter App'),
         ),
-        body: _questionIndex < questions.length ? Column(
-          children: [
-            Question(
-              questions[_questionIndex]['questionText'],                  //so here there is the index being used as well as the key !!!
-            ), 
-            ...(questions[_questionIndex]['answers'] as List<String>).map((answer){                  //yes, using the spread operator !
-              return Answer(_answerQuestion, answer);
-            }).toList()
-            // RaisedButton(child: Text('Answer 1'), onPressed: _answerQuestion,),
-            // RaisedButton(child: Text('Answer 2'), onPressed: ()=>print('Answer 2 chosen'),),
-            // RaisedButton(child: Text('Answer 3'), onPressed: (){print('Answer 3 chosen');},),
-            // Answer(_answerQuestion),
-          ],
-        ) : Center(child: Text('You did it!'),),
+        body: _questionIndex < _questions.length
+          ? Quiz(_questions, _answerQuestion)                   // questions made a private property with "_"!
+          : Center(child: Text('You did it!'),),
       ),
     );
   }
