@@ -56,7 +56,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('My first Flutter App'),
+          title: Text('Phoenix Quiz App'),
         ),
         body: _questionIndex < _questions.length
           ? Quiz(questions: _questions, answerQuestion: _answerQuestion, questionIndex: _questionIndex,)                   
